@@ -1,4 +1,5 @@
 let casual = require('casual')
+const events = require('./events/events.json')
 
 const roleMap = [
 	{
@@ -60,10 +61,33 @@ const menus = [
 				icon: '',
 				path: '/dashboard/events',
 				name: 'events',
-				title: '活动'
+				title: '活动',
+				children: [
+					{
+						id: '251',
+						icon: '',
+						path: '/dashboard/events/bannerList',
+						name: 'bannerList',
+						title: '轮播图列表'
+					},
+					{
+						id: '252',
+						icon: '',
+						path: '/dashboard/events/citys',
+						name: 'citys',
+						title: '城市列表'
+					},
+					{
+						id: '253',
+						icon: '',
+						path: '/dashboard/events/eventList',
+						name: 'eventList',
+						title: '活动列表'
+					}
+				]
 			}
 		]
-	},
+	}
 ]
 
 casual.define('user', function(role) {
@@ -97,7 +121,8 @@ module.exports = () => {
 		logout: {
 			status: 200,
 			message: 'success'
-		}
+		},
+		events: events
 	}
 
 	for (let i = 0; i < 54; i++) {

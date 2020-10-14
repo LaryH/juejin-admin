@@ -95,8 +95,44 @@ export const appRoutes = [
 						},
 						component: () =>
 							import(
-								/* webpackChunkName: "events" */ '@/views/dashboard/events'
-							)
+								/* webpackChunkName: "events" */ '@/views/dashboard/events/index'
+							),
+						redirect: 'events/eventList',
+						children: [
+							{
+								path: 'bannerList',
+								name: 'bannerList',
+								meta: {
+									title: '轮播图列表'
+								},
+								component: () =>
+									import(
+										/* webpackChunkName: "events" */ '@/views/dashboard/events/bannerList/index'
+									)
+							},
+							{
+								path: 'citys',
+								name: 'citys',
+								meta: {
+									title: '城市列表'
+								},
+								component: () =>
+									import(
+										/* webpackChunkName: "events" */ '@/views/dashboard/events/citys/index'
+									)
+							},
+							{
+								path: 'eventList',
+								name: 'eventList',
+								meta: {
+									title: '活动列表'
+								},
+								component: () =>
+									import(
+										/* webpackChunkName: "events" */ '@/views/dashboard/events/eventList/index'
+									)
+							}
+						]
 					}
 				]
 			}
