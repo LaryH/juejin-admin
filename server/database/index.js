@@ -1,8 +1,8 @@
 const books = require('./books/books.json')
-const events = require('./books/events.json')
-const home = require('./books/home.json')
-const topics = require('./books/topics.json')
-const pins = require('./books/pins.json')
+const events = require('./events/events.json')
+const home = require('./home/home.json')
+const topics = require('./topics/topics.json')
+const pins = require('./pins/pins.json')
 
 module.exports = {
 	books,
