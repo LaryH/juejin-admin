@@ -1,4 +1,5 @@
 let casual = require('casual')
+const { books, events, home, topics, pins } = require('./database/index')
 
 const roleMap = [
 	{
@@ -63,7 +64,7 @@ const menus = [
 				title: '活动'
 			}
 		]
-	},
+	}
 ]
 
 casual.define('user', function(role) {
@@ -97,7 +98,12 @@ module.exports = () => {
 		logout: {
 			status: 200,
 			message: 'success'
-		}
+		},
+		books,
+		events,
+		home,
+		topics,
+		pins
 	}
 
 	for (let i = 0; i < 54; i++) {
