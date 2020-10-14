@@ -1,5 +1,5 @@
 let casual = require('casual')
-const events = require('./events/events.json')
+const { books, events, home, topics, pins } = require('./database/index')
 
 const roleMap = [
 	{
@@ -122,7 +122,11 @@ module.exports = () => {
 			status: 200,
 			message: 'success'
 		},
-		events: events
+		books,
+		events,
+		home,
+		topics,
+		pins
 	}
 
 	for (let i = 0; i < 54; i++) {

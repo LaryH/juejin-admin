@@ -3,7 +3,7 @@
 		<a-card style="width: 460px;" :body-style="{ padding: '84px 64px' }">
 			<div class="logo-wrapper">
 				<img src="../../assets/images/logo.svg" class="logo" alt="背景图" />
-				<span class="title">VUE-ANTD-PRO</span>
+				<span class="title">JUEJIN</span>
 			</div>
 
 			<a-form :form="form" class="login-form">

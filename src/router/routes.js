@@ -56,7 +56,9 @@ export const appRoutes = [
 							title: '首页'
 						},
 						component: () =>
-							import(/* webpackChunkName: "home" */ '@/views/dashboard/home')
+							import(
+								/* webpackChunkName: "home" */ '@/views/dashboard/home/index.vue'
+							)
 					},
 					{
 						path: 'pins',
@@ -65,7 +67,9 @@ export const appRoutes = [
 							title: '沸点'
 						},
 						component: () =>
-							import(/* webpackChunkName: "pins" */ '@/views/dashboard/pins')
+							import(
+								/* webpackChunkName: "pins" */ '@/views/dashboard/pins/index.vue'
+							)
 					},
 					{
 						path: 'topics',
@@ -75,7 +79,7 @@ export const appRoutes = [
 						},
 						component: () =>
 							import(
-								/* webpackChunkName: "topics" */ '@/views/dashboard/topics'
+								/* webpackChunkName: "topics" */ '@/views/dashboard/topics/index.vue'
 							)
 					},
 					{
@@ -85,7 +89,9 @@ export const appRoutes = [
 							title: '小册'
 						},
 						component: () =>
-							import(/* webpackChunkName: "books" */ '@/views/dashboard/books')
+							import(
+								/* webpackChunkName: "books" */ '@/views/dashboard/books/index.vue'
+							)
 					},
 					{
 						path: 'events',
