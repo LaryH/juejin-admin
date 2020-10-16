@@ -41,7 +41,30 @@ const menus = [
 				icon: '',
 				path: '/dashboard/home',
 				name: 'home',
-				title: '首页'
+				title: '首页',
+				children: [
+					{
+						id: '211',
+						icon: '',
+						path: '/dashboard/home/category',
+						name: 'category',
+						title: '分类'
+					},
+					{
+						id: '212',
+						icon: '',
+						path: '/dashboard/home/tag',
+						name: 'tag',
+						title: '标签'
+					},
+					{
+						id: '213',
+						icon: '',
+						path: '/dashboard/home/article',
+						name: 'article',
+						title: '文章'
+					}
+				]
 			},
 			{
 				id: '22',
@@ -136,7 +159,8 @@ module.exports = () => {
 		citys,
 		home,
 		topics,
-		pins
+		pins,
+		boom
 	}
 
 	for (let i = 0; i < 54; i++) {

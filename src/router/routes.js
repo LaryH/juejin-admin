@@ -27,7 +27,7 @@ export const appRoutes = [
 	{
 		path: '/',
 		name: 'index',
-		redirect: '/dashboard/home',
+		redirect: '/dashboard/home/category',
 		component: AppLayout,
 		children: [
 			{
@@ -58,7 +58,42 @@ export const appRoutes = [
 						component: () =>
 							import(
 								/* webpackChunkName: "home" */ '@/views/dashboard/home/index.vue'
-							)
+							),
+						children: [
+							{
+								path: 'category',
+								name: 'dashboard_home_category',
+								meta: {
+									title: '分类'
+								},
+								component: () =>
+									import(
+										/* webpackChunkName: "home" */ '@/views/dashboard/home/category/index.vue'
+									)
+							},
+							{
+								path: 'tag',
+								name: 'dashboard_home_tag',
+								meta: {
+									title: '标签'
+								},
+								component: () =>
+									import(
+										/* webpackChunkName: "home" */ '@/views/dashboard/home/tag/index.vue'
+									)
+							},
+							{
+								path: 'article',
+								name: 'dashboard_home_article',
+								meta: {
+									title: '标签'
+								},
+								component: () =>
+									import(
+										/* webpackChunkName: "home" */ '@/views/dashboard/home/article/index.vue'
+									)
+							}
+						]
 					},
 					{
 						path: 'pins',
