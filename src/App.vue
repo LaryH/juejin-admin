@@ -1,10 +1,10 @@
 <template>
-  <a-locale-provider :locale="zh_CN">
-    <div id="app">
-      <router-view />
-    </div>
-  </a-locale-provider>
-</template>
+	<a-config-provider :locale="zh_CN">
+		<div id="app">
+			<router-view />
+		</div>
+	</a-config-provider>
+</template>                               
 
 <script>
 // eslint-disable-next-line

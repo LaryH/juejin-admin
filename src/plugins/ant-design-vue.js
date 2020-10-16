@@ -13,7 +13,7 @@ import {
   Radio,
   Layout,
   List,
-  LocaleProvider,
+  ConfigProvider,
   message,
   Menu,
   Modal,
@@ -33,7 +33,8 @@ import {
   Progress,
   Tag,
   Switch,
-  Tabs
+  Tabs,
+  FormModel
 } from 'ant-design-vue'
 
 Vue.prototype.$message = message
@@ -60,7 +61,7 @@ Vue.use(Radio)
 Vue.use(Radio.Group)
 Vue.use(Layout)
 Vue.use(List)
-Vue.use(LocaleProvider)
+Vue.use(ConfigProvider)
 Vue.use(Menu)
 Vue.use(Modal)
 Vue.use(Pagination)
@@ -79,3 +80,4 @@ Vue.use(Tag)
 Vue.use(Switch)
 Vue.use(Tabs)
 Vue.use(Tabs.TabPane)
+Vue.use(FormModel)
