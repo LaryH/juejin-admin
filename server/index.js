@@ -6,7 +6,8 @@ const {
 	citys,
 	home,
 	topics,
-	pins
+	pins,
+	boom
 } = require('./database/index')
 
 const roleMap = [

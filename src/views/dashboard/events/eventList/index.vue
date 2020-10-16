@@ -181,7 +181,6 @@ export default {
 
 		// 编辑
 		edit(key) {
-			console.log(key)
 			const newData = [...this.eventList]
 			const target = newData.filter(item => key === item.id)[0]
 			this.editingKey = key
