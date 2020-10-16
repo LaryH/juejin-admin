@@ -1,39 +1,41 @@
 import Vue from 'vue'
 import {
-  Avatar,
-  Button,
-  Card,
-  Col,
-  DatePicker,
-  Divider,
-  Dropdown,
-  Form,
-  Icon,
-  Input,
-  Radio,
-  Layout,
-  List,
-  LocaleProvider,
-  message,
-  Menu,
-  Modal,
-  notification,
-  Pagination,
-  Popover,
-  Row,
-  Select,
-  Spin,
-  Table,
-  Transfer,
-  TimePicker,
-  Tooltip,
-  Upload,
-  Drawer,
-  Skeleton,
-  Progress,
-  Tag,
-  Switch,
-  Tabs
+	Avatar,
+	Button,
+	Card,
+	Col,
+	DatePicker,
+	Divider,
+	Dropdown,
+	Form,
+	Icon,
+	Input,
+	Radio,
+	Layout,
+	List,
+	ConfigProvider,
+	message,
+	Menu,
+	Modal,
+	notification,
+	Pagination,
+	Popover,
+	Row,
+	Select,
+	Spin,
+	Table,
+	Transfer,
+	TimePicker,
+	Tooltip,
+	Upload,
+	Drawer,
+	Skeleton,
+	Progress,
+	Tag,
+	Switch,
+	Tabs,
+	Popconfirm,
+	FormModel
 } from 'ant-design-vue'
 
 Vue.prototype.$message = message
@@ -60,7 +62,7 @@ Vue.use(Radio)
 Vue.use(Radio.Group)
 Vue.use(Layout)
 Vue.use(List)
-Vue.use(LocaleProvider)
+Vue.use(ConfigProvider)
 Vue.use(Menu)
 Vue.use(Modal)
 Vue.use(Pagination)
@@ -79,3 +81,5 @@ Vue.use(Tag)
 Vue.use(Switch)
 Vue.use(Tabs)
 Vue.use(Tabs.TabPane)
+Vue.use(Popconfirm)
+Vue.use(FormModel)

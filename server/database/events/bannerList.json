@@ -1,0 +1,20 @@
+[
+    {
+        "id": 3075,
+        "title": "2020第二届全球移动开发者技术大",
+        "url": "http://hdxu.cn/GaiWi",
+        "screenshot": "https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c8aab943333d4980994c49529e8c907b~tplv-k3u1fbpfcp-zoom-1.image",
+        "city": "北京",
+        "event_start_time": 1603468800,
+        "event_end_time": 1603555200
+    },
+    {
+        "id": 3089,
+        "title": " 2020中国开源年会",
+        "url": "https://www.bagevent.com/event/6840909",
+        "screenshot": "https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1e950b01e13b44868a9f5c84a583ad56~tplv-k3u1fbpfcp-watermark.webp",
+        "city": "不限",
+        "event_start_time": 1603468800,
+        "event_end_time": 1603641600
+    }
+]

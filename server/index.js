@@ -1,5 +1,13 @@
 let casual = require('casual')
-const { books, events, home, topics, pins } = require('./database/index')
+const {
+	books,
+	eventList,
+	bannerList,
+	citys,
+	home,
+	topics,
+	pins
+} = require('./database/index')
 
 const roleMap = [
 	{
@@ -123,7 +131,9 @@ module.exports = () => {
 			message: 'success'
 		},
 		books,
-		events,
+		eventList,
+		bannerList,
+		citys,
 		home,
 		topics,
 		pins

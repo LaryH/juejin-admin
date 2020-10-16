@@ -1,0 +1,34 @@
+[
+	{
+		"banner_citys": [
+			{ "city_alias": "beijing", "city_name": "北京" },
+			{ "city_alias": "shanghai", "city_name": "上海" },
+			{ "city_alias": "guangzhou", "city_name": "广州" },
+			{ "city_alias": "shenzhen", "city_name": "深圳" },
+			{ "city_alias": "hangzhou", "city_name": "杭州" }
+		],
+		"other_citys": [
+			{ "city_alias": "changsha", "city_name": "长沙" },
+			{ "city_alias": "chengdu", "city_name": "成都" },
+			{ "city_alias": "chongqing", "city_name": "重庆" },
+			{ "city_alias": "fuzhou", "city_name": "福州" },
+			{ "city_alias": "haiwai", "city_name": "海外" },
+			{ "city_alias": "hefei", "city_name": "合肥" },
+			{ "city_alias": "nanjing", "city_name": "南京" },
+			{ "city_alias": "qingdao", "city_name": "青岛" },
+			{ "city_alias": "quanguo", "city_name": "全国" },
+			{ "city_alias": "shenyang", "city_name": "沈阳" },
+			{ "city_alias": "shijiazhuang", "city_name": "石家庄" },
+			{ "city_alias": "suzhou", "city_name": "苏州" },
+			{ "city_alias": "taiyuan", "city_name": "太原" },
+			{ "city_alias": "tianjin", "city_name": "天津" },
+			{ "city_alias": "wuhan", "city_name": "武汉" },
+			{ "city_alias": "xiamen", "city_name": "厦门" },
+			{ "city_alias": "xian", "city_name": "西安" },
+			{ "city_alias": "xianggang", "city_name": "香港" },
+			{ "city_alias": "zhengzhou", "city_name": "郑州" },
+			{ "city_alias": "zhuhai", "city_name": "珠海" },
+			{ "city_alias": "buxian", "city_name": "不限" }
+		]
+	}
+]
