@@ -2,7 +2,7 @@
 	<div>
 		<a-card class="selectCard">
 			<div class="selectBar">
-				<span class="title">分类:</span>
+				<span class="font">分类:</span>
 				<a-select style="width: 240px" @change="selectCategory" size="large">
 					<a-select-option
 						v-for="category in categoryList"
@@ -14,7 +14,7 @@
 				</a-select>
 			</div>
 			<div class="selectBar">
-				<span class="title">标签:</span>
+				<span class="font">标签:</span>
 				<a-select size="large" style="width: 240px" @change="selectTagId">
 					<a-select-option
 						v-for="tag in tagList"
@@ -60,7 +60,7 @@
 								shape="circle"
 								icon="delete"
 								size="large"
-								@click="() => deleteArticle(record.article_id)"
+								@click="() => deleteArticle(record.article_id, index)"
 							></a-button>
 						</span>
 					</div>
@@ -80,7 +80,7 @@
 					<a-input v-model="articleInfo.articleName" size="large" />
 				</a-form-model-item>
 				<a-form-model-item label="内容简介" :wrapperCol="{ span: 8 }">
-					<a-textarea v-model="articleInfo.articleName" :row="6" />
+					<a-textarea v-model="articleInfo.articleName" :rows="4" />
 				</a-form-model-item>
 				<a-form-model-item>
 					分类
@@ -185,7 +185,12 @@ export default {
 		cancel() {
 			this.modify = false
 		},
-		deleteArticle() {}
+		deleteArticle() {
+      this.articleList = this.articleList.filter(item => {
+        item
+        return
+      })
+    }
 	}
 }
 </script>
@@ -199,7 +204,7 @@ export default {
 		margin: 0 20px;
 		display: inline-block;
 		width: 300px;
-		.title {
+		.font {
 			font: 700 18px/40px 'mrcrosoft yahei';
 			color: #666;
 			margin-right: 10px;
