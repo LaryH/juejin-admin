@@ -1,5 +1,14 @@
 let casual = require('casual')
-const { books, events, home, topics, pins, boom } = require('./database/index')
+const {
+	books,
+	eventList,
+	bannerList,
+	citys,
+	home,
+	topics,
+	pins,
+	boom
+} = require('./database/index')
 
 const roleMap = [
 	{
@@ -84,7 +93,30 @@ const menus = [
 				icon: '',
 				path: '/dashboard/events',
 				name: 'events',
-				title: '活动'
+				title: '活动',
+				children: [
+					{
+						id: '251',
+						icon: '',
+						path: '/dashboard/events/bannerList',
+						name: 'bannerList',
+						title: '轮播图列表'
+					},
+					{
+						id: '252',
+						icon: '',
+						path: '/dashboard/events/citys',
+						name: 'citys',
+						title: '城市列表'
+					},
+					{
+						id: '253',
+						icon: '',
+						path: '/dashboard/events/eventList',
+						name: 'eventList',
+						title: '活动列表'
+					}
+				]
 			}
 		]
 	}
@@ -123,7 +155,9 @@ module.exports = () => {
 			message: 'success'
 		},
 		books,
-		events,
+		eventList,
+		bannerList,
+		citys,
 		home,
 		topics,
 		pins,

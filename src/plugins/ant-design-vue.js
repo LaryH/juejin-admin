@@ -34,6 +34,7 @@ import {
 	Tag,
 	Switch,
 	Tabs,
+	Popconfirm,
 	FormModel
 } from 'ant-design-vue'
 
@@ -80,4 +81,5 @@ Vue.use(Tag)
 Vue.use(Switch)
 Vue.use(Tabs)
 Vue.use(Tabs.TabPane)
+Vue.use(Popconfirm)
 Vue.use(FormModel)

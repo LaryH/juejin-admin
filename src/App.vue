@@ -4,7 +4,7 @@
 			<router-view />
 		</div>
 	</a-config-provider>
-</template>                               
+</template>
 
 <script>
 // eslint-disable-next-line

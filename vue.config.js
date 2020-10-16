@@ -36,7 +36,7 @@ module.exports = {
 				changeOrigin: true,
 				pathRewrite: {
 					'^/api': ''
-				} 
+				}
 			},
 			'/zhuanfa': {
 				target: 'http://localhost:6666',
