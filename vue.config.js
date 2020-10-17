@@ -38,12 +38,12 @@ module.exports = {
 					'^/api': ''
 				}
 			},
-			'/zhuanfa': {
+			'/backend': {
 				target: 'http://localhost:6666',
 				ws: false,
 				changeOrigin: true,
 				pathRewrite: {
-					'^/zhuanfa': ''
+					'^/backend': ''
 				}
 			}
 		}

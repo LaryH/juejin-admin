@@ -3,7 +3,7 @@
 		<a-card class="selectCard">
 			<div class="selectBar">
 				<span class="font">分类:</span>
-				<a-select style="width: 240px" @change="selectCategory" size="large">
+				<a-select style="width: 240px" @change="getTagList" size="large">
 					<a-select-option
 						v-for="category in categoryList"
 						:key="category.category_id"
@@ -15,7 +15,7 @@
 			</div>
 			<div class="selectBar">
 				<span class="font">标签:</span>
-				<a-select size="large" style="width: 240px" @change="selectTagId">
+				<a-select size="large" style="width: 240px" @change="getArticleList">
 					<a-select-option
 						v-for="tag in tagList"
 						:key="tag.tag_id"
@@ -31,7 +31,7 @@
 					size="large"
 					:disabled="!tagId"
 					block
-					@click="addArticle"
+					@click="showAdd"
 					>添加文章</a-button
 				>
 			</div>
@@ -51,7 +51,7 @@
 								shape="circle"
 								icon="edit"
 								size="large"
-								@click="() => edit(record, index)"
+								@click="() => showModify(record, index)"
 							></a-button>
 						</span>
 						<span>
@@ -60,7 +60,7 @@
 								shape="circle"
 								icon="delete"
 								size="large"
-								@click="() => deleteArticle(record.article_id, index)"
+								@click="() => deleteArticle(record.article_id)"
 							></a-button>
 						</span>
 					</div>
@@ -73,23 +73,22 @@
 				:label-col="{ span: 1 }"
 				labelAlign="left"
 			>
-				<a-form-model-item label="文章名称" :wrapperCol="{ span: 4 }">
-					<a-input v-model="articleInfo.articleName" size="large" />
+				<a-form-model-item label="文章名称" :wrapperCol="{ span: 12 }">
+					<a-input v-model="articleInfo.article_name" size="large" />
 				</a-form-model-item>
 				<a-form-model-item label="作者名称" :wrapperCol="{ span: 4 }">
-					<a-input v-model="articleInfo.articleName" size="large" />
+					<a-input v-model="articleInfo.author_name" size="large" />
 				</a-form-model-item>
-				<a-form-model-item label="内容简介" :wrapperCol="{ span: 8 }">
-					<a-textarea v-model="articleInfo.articleName" :rows="4" />
-				</a-form-model-item>
-				<a-form-model-item>
-					分类
-				</a-form-model-item>
-				<a-form-model-item>
-					标签
+				<a-form-model-item label="内容简介" :wrapperCol="{ span: 12 }">
+					<a-textarea v-model="articleInfo.brief_content" :rows="4" />
 				</a-form-model-item>
 			</a-form-model>
-			<a-button type="default" @click="cancel">取消</a-button>
+			<a-button type="primary" @click="edit" class="btn" size="large"
+				>确定</a-button
+			>
+			<a-button type="default" @click="cancel" class="btn" size="large"
+				>取消</a-button
+			>
 		</a-card>
 	</div>
 </template>
@@ -100,7 +99,7 @@ import {
 	getTagInfo,
 	getArticleInfo,
 	deleteArticle,
-	getboom
+	modifyArticle
 } from '@/api/home'
 export default {
 	name: '',
@@ -109,19 +108,19 @@ export default {
 			columns: [
 				{
 					title: '文章名称',
-					dataIndex: 'article_info.title',
+					dataIndex: 'article_name',
 					width: 160,
 					align: 'center'
 				},
 				{
 					title: '作者',
-					dataIndex: 'author_user_info.user_name',
+					dataIndex: 'author_name',
 					width: 80,
 					align: 'center'
 				},
 				{
 					title: '内容简介',
-					dataIndex: 'article_info.brief_content',
+					dataIndex: 'brief_content',
 					width: 400,
 					align: 'center'
 				},
@@ -153,7 +152,7 @@ export default {
 			}
 		},
 
-		async selectCategory(categoryId) {
+		async getTagList(categoryId) {
 			this.categoryId = categoryId
 			const result = await getTagInfo()
 			if (result.err_msg === 'success') {
@@ -161,36 +160,50 @@ export default {
 			}
 		},
 
-		async selectTagId(tagId) {
-			this.tagId = tagId
+		async getArticleList(tagId) {
+			this.tagId = tagId || this.tagId
 			const result = await getArticleInfo()
-			if (result.err_msg === 'success') {
+			if (result.msg === 'success') {
 				this.articleList = result.data
 			}
 		},
-		addArticle() {
+
+		showModify(record) {
+			this.articleInfo = {}
+			this.modify = true
+			this.articleInfo = {
+				...record
+			}
+		},
+		showAdd() {
+			this.articleInfo = {}
 			this.modify = true
 		},
-		edit(key) {
-			console.log(key)
-			this.modify = true
-			// const newData = [...this.articleList]
-			// const target = newData.filter(item => key === item.key)[0]
-			// this.editingKey = key
-			// if (target) {
-			// 	target.editable = true
-			// 	this.data = newData
-			// }
-		},
-		cancel() {
+		async edit() {
+			if (this.articleInfo.article_id) {
+				const result = await modifyArticle(this.articleInfo)
+			} else {
+				this.articleInfo = {
+					...this.articleInfo,
+					category_id: this.categoryId,
+					tag_id: this.tagId
+				}
+				const result = await modifyArticle(this.articleInfo)
+			}
+			this.getArticleList()
 			this.modify = false
 		},
-		deleteArticle() {
-      this.articleList = this.articleList.filter(item => {
-        item
-        return
-      })
-    }
+		async cancel() {
+			this.modify = false
+		},
+
+		async deleteArticle(article_id) {
+			console.log(article_id)
+			const result = await deleteArticle(article_id)
+			if (result.msg === 'success') {
+				this.getArticleList()
+			}
+		}
 	}
 }
 </script>
@@ -218,5 +231,9 @@ export default {
 }
 .operation-button {
 	margin: 0 10px;
+}
+.btn {
+	margin: 0 20px;
+	width: 80px;
 }
 </style>

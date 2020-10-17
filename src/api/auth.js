@@ -1,13 +1,13 @@
 import request from '@/utils/request'
 
 export function login (params) {
-  return request.get('/login')
+  return request.get('/api/login')
 }
 
 export function logout () {
-  return request.get('/logout')
+  return request.get('/api/logout')
 }
 
 export function modifyPassword (params) {
-  return request.post('/modifyPassword', params)
+  return request.post('/api/modifyPassword', params)
 }
