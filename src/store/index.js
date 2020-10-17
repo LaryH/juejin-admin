@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import createLogger from 'vuex/dist/logger'
+// import createLogger from 'vuex/dist/logger'
 
 import app from './modules/app'
 import user from './modules/user'
@@ -22,7 +22,7 @@ export const store = new Vuex.Store({
   mutations: {},
   actions: {},
   getters: {},
-  strict: debug,
+  strict: debug
   // plugins: debug ? [createLogger()] : []
 })
 

@@ -1,140 +1,140 @@
 import { AppLayout, ViewLayout } from '@/components/Layout'
 
 const otherRoutes = [
-	{
-		path: '/login',
-		name: 'login',
-		component: () =>
+  {
+    path: '/login',
+    name: 'login',
+    component: () =>
 			import(/* webpackChunkName: "login" */ '@/views/auth/login')
-	},
-	{
-		path: '/error',
-		name: 'error',
-		redirect: '404',
-		component: ViewLayout,
-		children: [
-			{
-				path: '404',
-				name: '404',
-				component: () =>
+  },
+  {
+    path: '/error',
+    name: 'error',
+    redirect: '404',
+    component: ViewLayout,
+    children: [
+      {
+        path: '404',
+        name: '404',
+        component: () =>
 					import(/* webpackChunkName: "404" */ '@/views/error/404')
-			}
-		]
-	}
+      }
+    ]
+  }
 ]
 
 export const appRoutes = [
-	{
-		path: '/',
-		name: 'index',
-		redirect: '/dashboard/home/category',
-		component: AppLayout,
-		children: [
-			{
-				path: 'table',
-				name: 'table',
-				meta: {
-					title: '表格页',
-					icon: 'table'
-				},
-				component: () =>
+  {
+    path: '/',
+    name: 'index',
+    redirect: '/dashboard/home/category',
+    component: AppLayout,
+    children: [
+      {
+        path: 'table',
+        name: 'table',
+        meta: {
+          title: '表格页',
+          icon: 'table'
+        },
+        component: () =>
 					import(/* webpackChunkName: "table" */ '@/views/table/table')
-			},
-			{
-				path: 'dashboard',
-				name: 'dashboard',
-				meta: {
-					title: 'Dashboard',
-					icon: 'dashboard'
-				},
-				component: ViewLayout,
-				children: [
-					{
-						path: 'home',
-						name: 'dashboard_home',
-						meta: {
-							title: '首页'
-						},
-						component: () =>
+      },
+      {
+        path: 'dashboard',
+        name: 'dashboard',
+        meta: {
+          title: 'Dashboard',
+          icon: 'dashboard'
+        },
+        component: ViewLayout,
+        children: [
+          {
+            path: 'home',
+            name: 'dashboard_home',
+            meta: {
+              title: '首页'
+            },
+            component: () =>
 							import(
 								/* webpackChunkName: "home" */ '@/views/dashboard/home/index.vue'
 							),
-						children: [
-							{
-								path: 'category',
-								name: 'dashboard_home_category',
-								meta: {
-									title: '分类'
-								},
-								component: () =>
+            children: [
+              {
+                path: 'category',
+                name: 'dashboard_home_category',
+                meta: {
+                  title: '分类'
+                },
+                component: () =>
 									import(
 										/* webpackChunkName: "home" */ '@/views/dashboard/home/category/index.vue'
 									)
-							},
-							{
-								path: 'tag',
-								name: 'dashboard_home_tag',
-								meta: {
-									title: '标签'
-								},
-								component: () =>
+              },
+              {
+                path: 'tag',
+                name: 'dashboard_home_tag',
+                meta: {
+                  title: '标签'
+                },
+                component: () =>
 									import(
 										/* webpackChunkName: "home" */ '@/views/dashboard/home/tag/index.vue'
 									)
-							},
-							{
-								path: 'article',
-								name: 'dashboard_home_article',
-								meta: {
-									title: '标签'
-								},
-								component: () =>
+              },
+              {
+                path: 'article',
+                name: 'dashboard_home_article',
+                meta: {
+                  title: '标签'
+                },
+                component: () =>
 									import(
 										/* webpackChunkName: "home" */ '@/views/dashboard/home/article/index.vue'
 									)
-							}
-						]
-					},
-					{
-						path: 'pins',
-						name: 'dashboard_pins',
-						meta: {
-							title: '沸点'
-						},
-						component: () =>
+              }
+            ]
+          },
+          {
+            path: 'pins',
+            name: 'dashboard_pins',
+            meta: {
+              title: '沸点'
+            },
+            component: () =>
 							import(
 								/* webpackChunkName: "pins" */ '@/views/dashboard/pins/index.vue'
 							)
-					},
-					{
-						path: 'topics',
-						name: 'topics',
-						meta: {
-							title: '话题'
-						},
-						component: () =>
+          },
+          {
+            path: 'topics',
+            name: 'topics',
+            meta: {
+              title: '话题'
+            },
+            component: () =>
 							import(
 								/* webpackChunkName: "topics" */ '@/views/dashboard/topics/index.vue'
 							)
-					},
-					{
-						path: 'books',
-						name: 'books',
-						meta: {
-							title: '小册'
-						},
-						component: () =>
+          },
+          {
+            path: 'books',
+            name: 'books',
+            meta: {
+              title: '小册'
+            },
+            component: () =>
 							import(
 								/* webpackChunkName: "books" */ '@/views/dashboard/books/index.vue'
 							)
-					},
-					{
-						path: 'events',
-						name: 'events',
-						meta: {
-							title: '活动'
-						},
-						component: () =>
+          },
+          {
+            path: 'events',
+            name: 'events',
+            meta: {
+              title: '活动'
+            },
+            component: () =>
 							import(
 								/* webpackChunkName: "events" */ '@/views/dashboard/events/index'
 							),

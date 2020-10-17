@@ -8,9 +8,7 @@
 						v-for="category in categoryList"
 						:key="category.category_id"
 						:value="category.category_id"
-					>
-						{{ category.category_name }}
-					</a-select-option>
+					>{{ category.category_name }}</a-select-option>
 				</a-select>
 			</div>
 			<div class="selectBar">
@@ -20,9 +18,7 @@
 						v-for="tag in tagList"
 						:key="tag.tag_id"
 						:value="tag.tag_id"
-					>
-						{{ tag.tag_name }}
-					</a-select-option>
+					>{{ tag.tag_name }}</a-select-option>
 				</a-select>
 			</div>
 			<div class="add-btn" v-show="!modify">

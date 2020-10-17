@@ -12,16 +12,16 @@ import zh_CN from 'ant-design-vue/lib/locale-provider/zh_CN'
 import { deviceEnquire } from '@/utils/device'
 
 export default {
-	name: 'app',
-	data() {
-		return {
-			zh_CN
-		}
-	},
-	mounted() {
-		deviceEnquire(deviceType =>
-			this.$store.commit('app/SET_DEVICE', deviceType)
-		)
-	}
+  name: 'app',
+  data () {
+    return {
+      zh_CN
+    }
+  },
+  mounted () {
+    deviceEnquire(deviceType =>
+      this.$store.commit('app/SET_DEVICE', deviceType)
+    )
+  }
 }
 </script>
